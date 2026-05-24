@@ -1,3 +1,5 @@
 *.ncm
 *.spec
 venv/
+*.flac
+*.mp3
