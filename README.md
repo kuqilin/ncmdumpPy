@@ -1,6 +1,10 @@
 # ncmdumpPy
 
+> [!WARNING]
+> 此 README 部分由 Copilot 根据程序生成。
+
 一个用于解密网易云音乐 `.ncm` 文件的 Python 工具。支持提取音频文件、写入元数据、封面图像，并可批量处理目录中的 `.ncm` 文件。
+参考 [ncmdump](https://github.com/taurusxin/ncmdump) 和 [ncmdump](https://github.com/QCloudHao/ncmdump) 项目。
 
 ## 特性
 
@@ -38,6 +42,8 @@ python ncmdumpPy.py -d path/to/directory
 
 ```bash
 python ncmdumpPy.py -i path/to/file.ncm -r
+# 或者
+python ncmdumpPy.py -d path/to/directory -r
 ```
 
 ## 依赖
@@ -48,9 +54,6 @@ python ncmdumpPy.py -i path/to/file.ncm -r
 依赖已在 `requirements.txt` 中列出。
 
 ## 说明
-
-> [!WARNING]
-> 此 README 由 Copilot 根据程序生成。
 
 - 输出文件会保存在与 `.ncm` 文件相同的目录中。
 - 文件格式会根据 `.ncm` 中的元数据自动选择，默认输出为 MP3。
