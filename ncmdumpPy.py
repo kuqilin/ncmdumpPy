@@ -234,11 +234,13 @@ if __name__ == '__main__':
     parser.add_argument('-r', '--remove', action='store_true', help='是否删除原始 .ncm 文件')
     args = parser.parse_args()
 
+    # 判断是否删除原始 .ncm 文件
+    if args.remove:
+        Wprint("将会删除原始 .ncm 文件")
+        DEL_ORIGIN = True
+
     # 处理单个文件 -i
     if args.input:
-        # 判断是否删除原始 .ncm 文件
-        if args.remove:
-            DEL_ORIGIN = True
         for input_file in args.input:
             if os.path.isfile(input_file):
                 dump(input_file)
@@ -247,9 +249,6 @@ if __name__ == '__main__':
         
     # 处理文件夹 -d
     if args.directory:
-        # 判断是否删除原始 .ncm 文件
-        if args.remove:
-            DEL_ORIGIN = True
         if os.path.isdir(args.directory):
             for ncm_file in os.listdir(args.directory):
                 if ncm_file.endswith('.ncm'):

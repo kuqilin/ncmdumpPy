@@ -3,3 +3,4 @@
 venv/
 *.flac
 *.mp3
+*.bak
