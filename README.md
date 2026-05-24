@@ -12,7 +12,8 @@
 
 ## 安装
 
->[warning] 建议使用虚拟环境运行，防止`pycryptodemo`库出问题
+> [!WARNING]
+> 建议使用虚拟环境运行，防止`pycryptodemo`库出问题
 
 1. 克隆仓库或下载脚本。
 2. 安装依赖：
@@ -24,19 +25,19 @@ pip install -r requirements.txt
 ## 使用方法
 
 ```bash
-python ncmdumpR.py -i path/to/file1.ncm [path/to/file2.ncm ...] 
+python ncmdumpPy.py -i path/to/file1.ncm [path/to/file2.ncm ...] 
 ```
 
 批量处理目录：
 
 ```bash
-python ncmdumpR.py -d path/to/directory
+python ncmdumpPy.py -d path/to/directory
 ```
 
 如果想在解密后删除原始 `.ncm` 文件，添加 `-r` 参数：
 
 ```bash
-python ncmdumpR.py -i path/to/file.ncm -r
+python ncmdumpPy.py -i path/to/file.ncm -r
 ```
 
 ## 依赖
@@ -48,7 +49,8 @@ python ncmdumpR.py -i path/to/file.ncm -r
 
 ## 说明
 
->[warning] 此 README 由 Copilot 根据程序生成。
+> [!WARNING]
+> 此 README 由 Copilot 根据程序生成。
 
 - 输出文件会保存在与 `.ncm` 文件相同的目录中。
 - 文件格式会根据 `.ncm` 中的元数据自动选择，默认输出为 MP3。
