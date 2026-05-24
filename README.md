@@ -42,12 +42,12 @@ python ncmdumpPy.py -h # 显示帮助信息
 
 > [!MESSAGE]
 > 如果你使用 Python 来运行，请使用 `python ncmdumpPy.py` 开始的方法
-> 如果你下载了编译好的二进制文件，请使用 `ncmdumpPy` 开始的方法
+> 如果你下载了编译好的二进制文件，请使用 `ncmdumpPy[.exe]` 开始的方法 (Windows需要加上`.exe`)
 
 ```bash
 python ncmdumpPy.py -i path/to/file1.ncm [path/to/file2.ncm ...] 
 # 或者
-ncmdumpPy -i path/to/file1.ncm  [path/to/file2.ncm ...]
+ncmdumpPy[.exe] -i path/to/file1.ncm  [path/to/file2.ncm ...]
 ```
 
 批量处理目录：
@@ -55,7 +55,7 @@ ncmdumpPy -i path/to/file1.ncm  [path/to/file2.ncm ...]
 ```bash
 python ncmdumpPy.py -d path/to/directory
 # 或者
-ncmdumpPy -d path/to/directory
+ncmdumpPy[.exe] -d path/to/directory
 ```
 
 如果想在解密后删除原始 `.ncm` 文件，添加 `-r` 参数：
@@ -64,8 +64,8 @@ ncmdumpPy -d path/to/directory
 python ncmdumpPy.py -i path/to/file.ncm -r
 python ncmdumpPy.py -d path/to/directory -r
 # 或者
-ncmdumpPy -i path/to/file.ncm -r
-ncmdumpPy -d path/to/directory -r
+ncmdumpPy[.exe] -i path/to/file.ncm -r
+ncmdumpPy[.exe] -d path/to/directory -r
 ```
 
 ## 依赖
