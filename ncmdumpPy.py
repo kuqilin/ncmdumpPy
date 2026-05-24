@@ -256,3 +256,5 @@ if __name__ == '__main__':
                     dump(os.path.join(args.directory, ncm_file))
         else:
             Eprint(f"{args.directory} 不是一个有效的目录")
+    
+    Mprint("所有文件处理完毕")
