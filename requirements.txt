@@ -1,0 +1,2 @@
+pycryptodome>=3.10.1
+mutagen>=1.47.0

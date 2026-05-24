@@ -1,0 +1,3 @@
+*.ncm
+*.spec
+venv/
