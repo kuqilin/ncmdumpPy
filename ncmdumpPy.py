@@ -8,9 +8,10 @@ import argparse
 import sys
 from typing import Dict, Any
 from Crypto.Cipher import AES
-from mutagen import File as MutagenFile
+from mutagen._file import File as MutagenFile   # 报错就换成 from mutagen import File as MutagenFile
 from mutagen.easyid3 import EasyID3
-from mutagen.id3 import ID3, APIC
+from mutagen.id3 import ID3
+from mutagen.id3._frames import APIC            # 报错就换成 from mutagen.id3 import APIC
 from mutagen.flac import FLAC, Picture
 
 # ---------- 固定密钥常量 ----------
@@ -160,7 +161,7 @@ def dump(ncm_path: str) -> str:
         # 1. 魔数校验
         if f.read(8) != NCM_MAGIC:
             Eprint(f"{ncm_path}: 无效的 .ncm 文件")
-            return None
+            return ""
         Mprint(f"{ncm_path}: 校验完成，开始解密")
         f.seek(2, 1)  # 保留
 
@@ -221,12 +222,15 @@ def dump(ncm_path: str) -> str:
         except Exception as e:
             Wprint(f"{ncm_path}: 无法删除原始文件 - {e}")
     
-    print(f"-------- {ncm_path} 解密完成 --------")
+    print(f"\033[32m-------- {ncm_path} 解密完成 --------\033[0m")
 
     return out_name
 
 
 if __name__ == '__main__':
+
+    cnt = 0
+
     parser = argparse.ArgumentParser(description='解密 .ncm 文件')
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('-i', '--input', nargs='+', help='.nmc 文件路径 (可指定多个)')
@@ -244,6 +248,7 @@ if __name__ == '__main__':
         for input_file in args.input:
             if os.path.isfile(input_file):
                 dump(input_file)
+                cnt += 1
             else:
                 Eprint(f"{input_file} 不是一个有效的文件")
         
@@ -253,7 +258,8 @@ if __name__ == '__main__':
             for ncm_file in os.listdir(args.directory):
                 if ncm_file.endswith('.ncm'):
                     dump(os.path.join(args.directory, ncm_file))
+                    cnt += 1
         else:
             Eprint(f"{args.directory} 不是一个有效的目录")
     
-    Mprint("所有文件处理完毕")
+    Mprint(f"共 {cnt} 个文件处理完毕")
