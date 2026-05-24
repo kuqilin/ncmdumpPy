@@ -4,3 +4,6 @@ venv/
 *.flac
 *.mp3
 *.bak
+build/
+dist/
+
