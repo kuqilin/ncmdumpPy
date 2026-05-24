@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
+# __author__ = "kuqilin"
+# __date__ = "2026/05/24"
 
 import struct
 import base64
 import json
 import os
 import argparse
-import sys
+# import sys
 from typing import Dict, Any
 from Crypto.Cipher import AES
 from mutagen._file import File as MutagenFile   # 报错就换成 from mutagen import File as MutagenFile
